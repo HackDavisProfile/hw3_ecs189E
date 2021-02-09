@@ -314,8 +314,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWk-gC-dbY">
-                                <rect key="frame" x="136" y="84" width="57" height="39"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sWk-gC-dbY">
+                                <rect key="frame" x="136" y="84" width="7" height="40"/>
                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -343,7 +343,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHg-yX-8ev">
-                                <rect key="frame" x="289" y="44" width="80" height="33"/>
+                                <rect key="frame" x="304" y="44" width="80" height="33"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="J0D-y7-2aq"/>
@@ -369,7 +369,7 @@
                             <constraint firstItem="4zm-tj-wRh" firstAttribute="top" secondItem="wka-K2-LfE" secondAttribute="bottom" constant="15" id="LUb-tD-7S1"/>
                             <constraint firstItem="sWk-gC-dbY" firstAttribute="leading" secondItem="Bew-GJ-Dgw" secondAttribute="trailing" id="LXF-7y-E4g"/>
                             <constraint firstItem="JnA-Ap-1yt" firstAttribute="top" secondItem="HRm-H0-X9e" secondAttribute="top" constant="84" id="YDU-iM-jFX"/>
-                            <constraint firstItem="HRm-H0-X9e" firstAttribute="trailing" secondItem="kHg-yX-8ev" secondAttribute="trailing" constant="45" id="a1e-U2-KcP"/>
+                            <constraint firstItem="HRm-H0-X9e" firstAttribute="trailing" secondItem="kHg-yX-8ev" secondAttribute="trailing" constant="30" id="a1e-U2-KcP"/>
                             <constraint firstItem="HRm-H0-X9e" firstAttribute="trailing" secondItem="4zm-tj-wRh" secondAttribute="trailing" id="bf5-kO-xh5"/>
                             <constraint firstItem="wka-K2-LfE" firstAttribute="top" secondItem="Bew-GJ-Dgw" secondAttribute="bottom" constant="10" id="iCe-9L-Jsw"/>
                             <constraint firstItem="kHg-yX-8ev" firstAttribute="top" secondItem="HRm-H0-X9e" secondAttribute="top" id="kSS-Qm-q5N"/>
@@ -379,6 +379,7 @@
                     </view>
                     <connections>
                         <outlet property="AccountsTableView" destination="4zm-tj-wRh" id="Q6Q-4j-iah"/>
+                        <outlet property="logoutButtonOutlet" destination="kHg-yX-8ev" id="2sM-Ig-8rn"/>
                         <outlet property="nameField" destination="sWk-gC-dbY" id="Hgj-as-CbY"/>
                         <outlet property="totalAmoundLabel" destination="JnA-Ap-1yt" id="UMz-Au-jve"/>
                     </connections>

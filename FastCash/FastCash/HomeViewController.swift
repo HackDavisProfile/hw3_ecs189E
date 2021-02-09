@@ -16,6 +16,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     var userPhone: String = ""
     
 
+    @IBOutlet weak var logoutButtonOutlet: UIButton!
     @IBOutlet weak var AccountsTableView: UITableView!
     @IBOutlet weak var totalAmoundLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
@@ -67,7 +68,9 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         
         AccountsTableView.dataSource = self
 
-        self.navigationController?.isNavigationBarHidden = true
+        //self.navigationController?.isNavigationBarHidden = true
+        
+        logoutButtonOutlet.layer.cornerRadius = 5.0
         
         // initiation of the user
         Api.user { (response, error) in
