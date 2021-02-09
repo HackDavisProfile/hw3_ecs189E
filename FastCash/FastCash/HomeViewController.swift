@@ -66,6 +66,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         AccountsTableView.dataSource = self
+
+        self.navigationController?.isNavigationBarHidden = true
         
         // initiation of the user
         Api.user { (response, error) in
