@@ -56,31 +56,75 @@ class VerificationViewController: UIViewController, PinTexFieldDelegate {
         
 
     }
-    /*
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
+        if textField == self.OTP6 {
+            
         let currentText = textField.text ?? ""
         guard let range = Range(range, in: currentText) else {
             assertionFailure("Range not defined")
             return true
         }
         let newText: String
-        if (currentText.count > 0){
+        //let abc: Character
+        print("currentText")
+        print(currentText)
+        print("string")
+        print(string)
+        if ((currentText.count > 0) && (string.count > 0)) {
             newText = currentText
         } else {
             newText = currentText.replacingCharacters(in: range, with: string)
         }
         
         textField.text = newText
+            
+            Api.verifyCode(phoneNumber: self.phoneNum,
+                           code: self.fields.compactMap({$0.text}).reduce("", {$0 + $1}),
+                           completion: { response, error in
+                if error == nil {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(identifier: "home")
+                    guard let navC = self.navigationController else {
+                        assertionFailure("couldn't find nav")
+                        return
+                    }
+
+                    guard let response = response else {
+                        if let err = error {
+                            print( err.message)
+                        } else {
+                           print("Unknown error")
+                        }
+                        return
+                    }
+                    
+                    let authToken = response["auth_token"] as? String
+
+                    Storage.authToken = authToken
+                
+                    navC.setViewControllers([vc], animated: true)
+                    
+                }
+                else {
+                    self.ErrorLabel.text = error?.message
+                    self.ErrorLabel.textColor = .systemRed
+                }
+            })
         
         return false
+        
+        } else {
+            return true
+        }
     }
  
- */
+ 
     
     func didPressBackspace(textField: PinTextField) {
         if let text = textField.text{
             if text != "" {
+                self.fields[currentField].isUserInteractionEnabled = true
                 self.fields[currentField].text = ""
             } else {
                 if (currentField != 0){
