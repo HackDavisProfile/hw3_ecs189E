@@ -86,7 +86,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                     return
                 }
                 // initiation of the user's valet
-                let userWallet = Wallet.init(data: response, ifGenerateAccounts: true)
+                let userWallet = Wallet.init(data: response, ifGenerateAccounts: false)
                 
                 
                 self.userPhone = userWallet.phoneNumber
@@ -109,6 +109,17 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             }
         }
         
+    }
+    // source: https://stackoverflow.com/questions/9239067/how-to-hide-a-navigation-bar-from-one-particular-view-controller/9239246#:~:text=UINavigationController%20has%20a%20property%20navigationBarHidden,for%20the%20whole%20nav%20controller.&text=present%20it%20before%20the%20navigation,controller%20(both%20without%20animation).
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     
