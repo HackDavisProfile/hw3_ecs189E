@@ -17,7 +17,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
 
     @IBOutlet weak var AccountsTableView: UITableView!
-    
     @IBOutlet weak var totalAmoundLabel: UILabel!
     @IBOutlet weak var nameField: UITextField!
     
